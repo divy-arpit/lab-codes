@@ -31,6 +31,7 @@ public class Server {
             }
 
             System.out.println("Parameter 1 : " + a);
+            System.out.println("Parameter 2 : " + b);
             if (fun.compareTo("add") == 0) {
                 c = a + b;
                 System.out.println("Addition = " + c);

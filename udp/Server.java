@@ -5,13 +5,16 @@ import java.net.DatagramSocket;
 
 public class Server {
     public void CreateServer(int port){
-        byte[] buffer=new byte[2048];
+        byte[] buffer=new byte[2048]; 
         try{
+           
             //! create a socket
             DatagramSocket socket=new DatagramSocket(port);
+
             //! this is the packet being received
             DatagramPacket packet;
             String inputString="";
+
             while(!inputString.equals("over")){
                 //! receive a packet
                 packet=new DatagramPacket(buffer, buffer.length);

@@ -29,6 +29,6 @@ public class Client {
         }
     }
     public static void main(String[] args) {
-        new Client().CreateClient(5000, "127.0.0.1");
+        new Client().CreateClient(5001, "192.168.29.170");
     }
 }

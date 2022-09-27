@@ -26,10 +26,10 @@ public class Client {
             dataOutputStream.writeUTF(sendMessage);
             System.out.println("Enter first parameter :");
             temp = in.nextLine();
-            dataOutputStream.writeUTF(sendMessage);
+            dataOutputStream.writeUTF(temp);
             System.out.println("Enter second parameter : ");
             temp = in.nextLine();
-            dataOutputStream.writeUTF(sendMessage);
+            dataOutputStream.writeUTF(temp);
             System.out.flush();
             receiveMessage = dataInputStream.readUTF();
             System.out.println(receiveMessage);

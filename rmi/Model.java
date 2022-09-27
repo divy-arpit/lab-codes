@@ -9,9 +9,10 @@ interface ServerInterface extends Remote{
     public int Sub(int a,int b) throws RemoteException;
     public int Mul(int a,int b) throws RemoteException;
     public int Div(int a,int b) throws RemoteException;
+    public int Factorial(int a) throws RemoteException;
 }
 
- public class Model extends UnicastRemoteObject implements ServerInterface{
+public class Model extends UnicastRemoteObject implements ServerInterface{
     
     protected Model() throws RemoteException {
         super();
@@ -35,6 +36,15 @@ interface ServerInterface extends Remote{
     @Override
     public int Div(int a, int b) throws RemoteException {
         return a/b;
+    }
+
+    @Override
+    public int Factorial(int a) throws RemoteException {
+        int ans=1;
+        for(int i=1;i<=a;i++){
+            ans*=i;
+        }
+        return ans;
     }
 
 }

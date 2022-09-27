@@ -1,5 +1,6 @@
 package tcp;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
@@ -12,10 +13,14 @@ public class Client {
             Socket socket=new Socket(address,port);
 
             DataOutputStream outputStream=new DataOutputStream(socket.getOutputStream());
+            DataInputStream dataInputStream=new DataInputStream(socket.getInputStream());
+            
 
             String input=in.nextLine();
             while(!input.equals("over")){
                 outputStream.writeUTF(input);
+                String response=dataInputStream.readUTF();
+                System.out.println(response);
                 input=in.nextLine();
             }
             outputStream.writeUTF("over");
