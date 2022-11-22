@@ -10,9 +10,17 @@ import java.sql.SQLOutput;
 public class server {
 
     public static void main(String[] args) throws RemoteException, MalformedURLException {
-        ServerInterface stub = new Model();
-        LocateRegistry.createRegistry(5001);
-        System.out.println("Started");
+//         ServerInterface stub = new Model();
+//         LocateRegistry.createRegistry(5001);
+//         System.out.println("Started");
+         try{
+            ServerInterface stub=new Model();
+            LocateRegistry.createRegistry(5001);
+            Naming.rebind("rmi://localhost:5001/server", stub);
+            System.out.println("Started");
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
 }
 
